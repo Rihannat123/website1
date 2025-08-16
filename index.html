@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website</title>
+    </head>
+    <style>
+        body{
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: beige;
+            color: black;
+        }
+        .topnav {
+            overflow:hidden;
+            background-color: blanchedalmond;
+        } 
+        .topnav a{
+            float:left;
+            color:#1affa3 ;
+             text-align: center;
+             padding: 14px 16px;
+             text-decoration: none ;
+             font-size: 17px;
+        }  
+        .topnav a:hover{
+            background-color: aquamarine;
+            color: black;
+        }
+        .topnav a.active{
+            background-color: azure;
+            color: black;
+        }
+        </style>
+    <body>
+      <div class="topnav">
+         <a class="active" href="#">Home</a>
+         <a href="#"> About Us</a>
+         <a href="#"> Gallery</a>
+        <a href="#"> Contact Us</a>
+      </div>
+      <section>
+         <img class="myslides" src="17f73a21409bc940785789370408b0d3.jpg " height="400px" width="400px">
+          <img class="myslides" src="e83269eb6d26121d4e099ef7a637771a.jpg" height="400px" width="400px">
+      </section>
+      <script>
+        var myindex=0;
+        carousel();
+         function carousel(){
+            var i;
+            var x=document.getElementsByClassName('myslides');
+            for(i=0; i< x.length;i++){
+                x[i].style.display="none";       
+               }
+            myindex++;
+            if(myindex>x.length){myindex=1}
+            x[myindex-1].style.display="block";
+            setTimeout(carousel,3000);
+         }
+      </script>
+    </body>
+</html>
